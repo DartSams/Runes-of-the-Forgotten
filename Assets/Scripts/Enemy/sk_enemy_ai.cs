@@ -9,6 +9,7 @@ public class sk_enemy_ai : MonoBehaviour
      public float attackCooldown;
      public float range;
      public int damage;
+     public int health;
      public float colliderDistance;
      public BoxCollider2D boxCollider;
      public LayerMask playerLayer;
@@ -24,6 +25,22 @@ public class sk_enemy_ai : MonoBehaviour
         anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
         
+    }
+
+    public void takeDamage(int damage)
+    {
+
+        if (damage >= health)
+        {
+            Destroy(gameObject);
+        }
+
+        else
+        {
+
+           // health -= damage;
+           gameObject.SetActive(false);
+        }
     }
 
 
@@ -51,6 +68,8 @@ public class sk_enemy_ai : MonoBehaviour
 
         }
     }
+
+    
 
     private bool PlayerInSight()
     {

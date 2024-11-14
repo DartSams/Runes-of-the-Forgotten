@@ -7,7 +7,7 @@ public class trapTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject[] traps;
-    public bool activate;
+
     void Start()
     {
         
@@ -19,11 +19,20 @@ public class trapTrigger : MonoBehaviour
         
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+
+   
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         for (int i = 0; i < traps.Length; i++)
         {
-            traps[i].SetActive(activate);
+
+            arror state = traps[i].GetComponent<arror>();
+
+            if (state != null)
+            {
+                state.setRun(!state.run);
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +10,15 @@ public class arror : MonoBehaviour
     public Transform spawnLocation;
     public Quaternion spawnRotation;
     public float spawnTime = 0.5f;
-
-    private float timeSinceSpawned = 0f;
+    public Boolean run = false;
+    private float timeSinceSpawned = 1f;
     
+    
+    public void setRun(Boolean run)
+    {
 
+        this.run = run;
+    }
 
     void Start()
     {
@@ -23,16 +29,20 @@ public class arror : MonoBehaviour
     void Update()
     {
 
-        timeSinceSpawned+= Time.deltaTime;
-
-        if(timeSinceSpawned >= spawnTime)
+        if (run)
         {
-            GameObject arrow = Instantiate(projectile, spawnLocation.position, spawnRotation);
-            arrow.transform.Rotate(0, 0, 90f);
-            timeSinceSpawned = 0;
 
-            
+            timeSinceSpawned += Time.deltaTime;
 
+            if (timeSinceSpawned >= spawnTime)
+            {
+                GameObject arrow = Instantiate(projectile, spawnLocation.position, spawnRotation);
+                arrow.transform.Rotate(0, 0, 90f);
+                timeSinceSpawned = 0;
+
+
+
+            }
         }
        
 

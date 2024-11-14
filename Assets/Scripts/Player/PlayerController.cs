@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -13,6 +14,13 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer spriteRenderer;
 
+    public GameObject attackPoint;
+    public LayerMask enemyLayer;
+    public float radius;
+
+    public int health;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();// Get the Rigidbody component on the object
@@ -24,6 +32,47 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();      // Call the method to move the player
         Jump();            // Call the method to handle jumping
+    }
+
+    void takeDamage(int damage)
+    {
+
+        if (damage >= health)
+        {
+            anim.SetTrigger("death");
+            Destroy(gameObject);
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else
+        {
+            health-= damage;
+
+        }
+    }
+
+    void attack()
+    {
+
+        Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius, enemyLayer);
+
+        foreach(Collider2D enemy2 in enemy)
+        {
+
+            Debug.Log("Hit enemy");
+            sk_enemy_ai eh = enemy2.GetComponent<sk_enemy_ai>();
+
+            eh.takeDamage(5);
+        }
+
+
+    }
+
+    
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(attackPoint.transform.position, radius);
     }
 
     void MovePlayer()
@@ -47,12 +96,15 @@ public class PlayerController : MonoBehaviour
 
 
         Vector2 check = new Vector2(moveX, moveZ);
-        
-        if(fire != 0)
+
+
+        if (fire != 0)
         {
 
             anim.SetBool("isAttacking", true);
+            
         }
+
         else
         {
             anim.SetBool("isAttacking", false);
@@ -84,19 +136,35 @@ public class PlayerController : MonoBehaviour
         {
             // Add upward force to the Rigidbody for jumping
             rb.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
-            //isGrounded = false;  // Set grounded to false until landing
+            isGrounded = false;  // Set grounded to false until landing
         }
     }
 
-    // Check if the player collides with the ground
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        // If the player touches a surface tagged as "Ground," reset grounded status
+
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
+
+        if (collision.gameObject.CompareTag("damage"))
+        {
+
+            //takeDamage(1);
+
+            
+
+
+        }
+
+        
     }
+
 }
+
+    
+       
+
 
 

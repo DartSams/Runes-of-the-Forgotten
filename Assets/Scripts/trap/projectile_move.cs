@@ -8,6 +8,7 @@ public class projectile_move : MonoBehaviour
     public float aliveTime = 5f;
     public float moveSpeed = 5f;
     private float timer = 0f;
+
     void Start()
     {
         
