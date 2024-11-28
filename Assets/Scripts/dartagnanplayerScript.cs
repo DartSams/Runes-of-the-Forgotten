@@ -89,13 +89,21 @@ public class dartagnanplayerScript : MonoBehaviour
         {
             sprite.flipX = true;
         }
+<<<<<<< HEAD
         anim.SetFloat("yDirection", moveVector.x);
+=======
+        anim.SetFloat("yDir", moveVector.x);
+>>>>>>> 948f37c74c36da36539a1c91fbfcc3708266851f
     }
 
     private void OnMoveCancelled(InputAction.CallbackContext value)
     {
         moveVector = Vector2.zero;
+<<<<<<< HEAD
         anim.SetFloat("yDirection", moveVector.x);
+=======
+        anim.SetFloat("yDir", moveVector.x);
+>>>>>>> 948f37c74c36da36539a1c91fbfcc3708266851f
     }
 
     private void Move()
@@ -128,7 +136,11 @@ public class dartagnanplayerScript : MonoBehaviour
         if (isGrounded)
         {
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+<<<<<<< HEAD
             anim.SetFloat("xDirection", 1.29f);
+=======
+            anim.SetFloat("xDir", 1.29f);
+>>>>>>> 948f37c74c36da36539a1c91fbfcc3708266851f
             StartCoroutine(startFall());
             isGrounded = false;
         }
@@ -137,14 +149,22 @@ public class dartagnanplayerScript : MonoBehaviour
     IEnumerator startFall()
     {
         yield return new WaitForSeconds(0.75f);
+<<<<<<< HEAD
         anim.SetFloat("xDirection", -1.29f);
+=======
+        anim.SetFloat("xDir", -1.29f);
+>>>>>>> 948f37c74c36da36539a1c91fbfcc3708266851f
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "ground")
         {
+<<<<<<< HEAD
             anim.SetFloat("xDirection", 0);
+=======
+            anim.SetFloat("xDir", 0);
+>>>>>>> 948f37c74c36da36539a1c91fbfcc3708266851f
         }
 
         if (collision.transform.tag == "rune")
