@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/DartagnanLevel.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/scene 2.unity
+    guid: 72a5d8f9f2676ac4289390ffe13bec4f
+  - enabled: 1
+    path: Assets/Scenes/Level-Select.unity
+    guid: 70d784a0fcffd8d4fb5492231b3fe693
+  - enabled: 1
+    path: Assets/Scenes/Sutton-level-new.unity
+    guid: 5e781e4ae8c186a479731a3c9cda528f
+  - enabled: 1
+    path: Assets/Scenes/RunesLevel.unity
+    guid: 12eca704b1ce77942b9d79186f5cda05
+  - enabled: 1
+    path: Assets/Scenes/OakWoodsLevel.unity
+    guid: a9a461ef32873524eb553b1c016ea8d6
+  - enabled: 1
+    path: Assets/Scenes/Main-menu.unity
+    guid: 3d722fe95ff2b9e43a186721babb772b
   m_configObjects: {}
