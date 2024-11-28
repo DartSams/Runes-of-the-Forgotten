@@ -33,7 +33,7 @@ public class persistentManager : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("enemy");
         enemyCount = enemies.Length;
         enemyCountText.text = "Enemies: " + enemyCount.ToString();
-        playerHealthText.text = "Player Health: " + player.gameObject.GetComponent<playerScript>().currentHealth;
+        playerHealthText.text = "Player Health: " + player.gameObject.GetComponent<dartagnanplayerScript>().currentHealth;
         UpdateEnemyCount();
     }
 
@@ -66,6 +66,6 @@ public class persistentManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerHealthText.text = "Player Health: " + player.gameObject.GetComponent<playerScript>().currentHealth;
+        playerHealthText.text = "Player Health: " + player.gameObject.GetComponent<dartagnanplayerScript>().currentHealth;
     }
 }

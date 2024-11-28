@@ -9,7 +9,7 @@ public class val : MonoBehaviour
     BoxCollider2D bc; // Reference to the player's BoxCollider2D component
     Rigidbody2D rb; // Reference to the player's Rigidbody2D component
     SpriteRenderer sprite; // Reference to the player's SpriteRenderer component
-    PlayerController input = null; // Input handler for player controls
+    DartagnanplayerController input = null; // Input handler for player controls
     Vector2 moveVector; // Stores the movement input vector
     float moveSpeed = 5f; // Speed at which the player moves
     bool isPaused = false; // Toggle for pausing the game
@@ -24,7 +24,7 @@ public class val : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         bc = GetComponent<BoxCollider2D>();
-        input = new PlayerController();
+        input = new DartagnanplayerController();
         animator = GetComponent<Animator>();
     }
 

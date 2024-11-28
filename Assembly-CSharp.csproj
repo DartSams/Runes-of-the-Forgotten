@@ -58,11 +58,36 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\playerController.cs" />
-    <Compile Include="Assets\Scripts\enemyScript.cs" />
-    <Compile Include="Assets\Scripts\playerScript.cs" />
+    <Compile Include="Assets\Scripts\DartagnanenemyScript.cs" />
+    <Compile Include="Assets\Scripts\dartagnanplayerScript.cs" />
     <Compile Include="Assets\Scripts\val.cs" />
     <Compile Include="Assets\Scripts\persistentManager.cs" />
+    <Compile Include="Assets\Scripts\level-select\LevelButton.cs" />
+    <Compile Include="Assets\Scripts\trap\projectile_move.cs" />
+    <Compile Include="Assets\Scripts\Animation.cs" />
+    <Compile Include="Assets\Scripts\trap\trapTrigger.cs" />
+    <Compile Include="Assets\Scripts\death.cs" />
+    <Compile Include="Assets\Scripts\trap\ProjectileLauncher.cs" />
+    <Compile Include="Assets\Scripts\SpriteRenderer.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\CheckPlayerPosition.cs" />
+    <Compile Include="Assets\Scripts\Hero.cs" />
+    <Compile Include="Assets\Scripts\FollowCamera.cs" />
+    <Compile Include="Assets\Scripts\Player\Meele.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyPatrol.cs" />
+    <Compile Include="Assets\Scripts\Health.cs" />
+    <Compile Include="Assets\Scripts\DeathBounds.cs" />
+    <Compile Include="Assets\Scripts\Enemy\sk_enemy_ai.cs" />
+    <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Enemies.cs" />
+    <Compile Include="Assets\Scripts\camera\camera_movement.cs" />
+    <Compile Include="Assets\Scripts\ManageGameOver.cs" />
+    <Compile Include="Assets\monsters\Monsters_Creatures_Fantasy\Monsters_Creatures_Fantasy\Scripts\enemyScript.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerControllerManual.cs" />
+    <Compile Include="Assets\Scripts\GameOver.cs" />
+    <Compile Include="Assets\Scripts\DartagnanplayerController.cs" />
+    <Compile Include="Assets\OakWoods_Level\PlayerController.cs" />
+    <Compile Include="Assets\OakWoods_Level\ValentinaplayerScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
