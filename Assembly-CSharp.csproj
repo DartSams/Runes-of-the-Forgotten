@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\DartagnanenemyScript.cs" />
-    <Compile Include="Assets\Scripts\dartagnanplayerScript.cs" />
+    <Compile Include="Assets\Scripts\MainPlayerScript.cs" />
     <Compile Include="Assets\Scripts\val.cs" />
     <Compile Include="Assets\Scripts\persistentManager.cs" />
     <Compile Include="Assets\Scripts\level-select\LevelButton.cs" />
@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\CheckPlayerPosition.cs" />
     <Compile Include="Assets\Scripts\Hero.cs" />
     <Compile Include="Assets\Scripts\FollowCamera.cs" />
+    <Compile Include="Assets\Scripts\EnemyTestPatrol.cs" />
     <Compile Include="Assets\Scripts\Player\Meele.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyPatrol.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
@@ -83,11 +84,11 @@
     <Compile Include="Assets\Scripts\camera\camera_movement.cs" />
     <Compile Include="Assets\Scripts\ManageGameOver.cs" />
     <Compile Include="Assets\monsters\Monsters_Creatures_Fantasy\Monsters_Creatures_Fantasy\Scripts\enemyScript.cs" />
+    <Compile Include="Assets\Scripts\playerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerControllerManual.cs" />
     <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\DartagnanplayerController.cs" />
-    <Compile Include="Assets\OakWoods_Level\PlayerController.cs" />
-    <Compile Include="Assets\OakWoods_Level\ValentinaplayerScript.cs" />
+    <Compile Include="Assets\Scripts\playerScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

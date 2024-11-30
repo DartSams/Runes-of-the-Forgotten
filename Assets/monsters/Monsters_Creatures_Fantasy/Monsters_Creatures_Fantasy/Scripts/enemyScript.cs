@@ -27,6 +27,18 @@ public class enemyScript : MonoBehaviour
     {
         if (target != null)
         {
+            if (target.transform.position.x > transform.position.x)
+            {
+                sr.flipX = false;
+            }
+            else
+            {
+                sr.flipX = true;
+            }
+        }
+        
+        if (target != null)
+        {
             float distanceToTarget = Vector2.Distance(transform.position, target.transform.position);
             if (distanceToTarget < attackRange)
             {
@@ -38,15 +50,6 @@ public class enemyScript : MonoBehaviour
             {
                 chase();
                 transform.position = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.deltaTime);
-            }
-
-            if (target.transform.position.x > transform.position.x)
-            {
-                sr.flipX = false;
-            }
-            else
-            {
-                sr.flipX = true;
             }
         }
     }
@@ -74,7 +77,7 @@ public class enemyScript : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-        anim.SetTrigger("take hit");
+        anim.SetTrigger("takeHit");
 
         if (currentHealth <= 0)
         {

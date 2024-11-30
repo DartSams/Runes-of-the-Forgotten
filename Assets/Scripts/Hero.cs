@@ -30,7 +30,7 @@ public class Hero : MonoBehaviour
     {
         health = GetComponent<Health>();
         currentHealth = maxHealth;
-        healthbar.SetMaxHealth(maxHealth);
+        //healthbar.SetMaxHealth(maxHealth);
     }
 
     private void Update()

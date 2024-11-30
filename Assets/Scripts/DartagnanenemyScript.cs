@@ -68,7 +68,7 @@ public class DartagnanenemyScript : MonoBehaviour
 
     void hitEnemy()
     {
-        target.gameObject.GetComponent<dartagnanplayerScript>().TakeDamage(25);
+        target.gameObject.GetComponent<MainPlayerScript>().TakeDamage(25);
     }
 
     private void chase()
@@ -86,6 +86,7 @@ public class DartagnanenemyScript : MonoBehaviour
             target = null;
             //pc.enabled = false;
             Death();
+            Destroy(gameObject);
             persistentManager.instance.UpdateEnemyCount();
         }
     }

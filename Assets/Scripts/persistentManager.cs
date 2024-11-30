@@ -18,8 +18,16 @@ public class persistentManager : MonoBehaviour
     int currRuneIndex = 0;
     GameObject player;
 
+    List<string> sceneNames = new List<string>();
+    
+
     void Awake()
     {
+        sceneNames.Add("OakWoodsLevel");
+        sceneNames.Add("DartagnanLevel");
+        sceneNames.Add("grant");
+        sceneNames.Add("RunesLevel");
+        sceneNames.Add("Sutton-level");
         player = GameObject.FindWithTag("player");
         if (instance == null)
         {
@@ -33,8 +41,8 @@ public class persistentManager : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("enemy");
         enemyCount = enemies.Length;
         enemyCountText.text = "Enemies: " + enemyCount.ToString();
-        playerHealthText.text = "Player Health: " + player.gameObject.GetComponent<dartagnanplayerScript>().currentHealth;
-        UpdateEnemyCount();
+        playerHealthText.text = "Player Health: " + player.gameObject.GetComponent<MainPlayerScript>().currentHealth;
+        //UpdateEnemyCount();
     }
 
     public void AddCoins(int coins)
@@ -46,10 +54,11 @@ public class persistentManager : MonoBehaviour
     {
         enemyCount--;
         enemyCountText.text = "Enemies: " + enemyCount.ToString();
-        enemies = GameObject.FindGameObjectsWithTag("enemy");
-        enemyCount = enemies.Length;
+        //enemies = GameObject.FindGameObjectsWithTag("enemy");
+        //enemyCount = enemies.Length;
         if (enemyCount <= 0)
         {
+            Debug.Log("all dead");
             GameObject rune = instance.runeImages[currRuneIndex];
 
 
@@ -59,13 +68,17 @@ public class persistentManager : MonoBehaviour
             color.a = Mathf.Clamp01(1f);
             image.color = color;
             currRuneIndex++;
+            SceneManager.LoadScene(sceneNames[currRuneIndex]);
+
         }
-        SceneManager.LoadScene("scene 2");
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerHealthText.text = "Player Health: " + player.gameObject.GetComponent<dartagnanplayerScript>().currentHealth;
+        playerHealthText.text = "Player Health: " + player.gameObject.GetComponent<MainPlayerScript>().currentHealth;
+        enemies = GameObject.FindGameObjectsWithTag("enemy");
+        enemyCount = enemies.Length;
+        enemyCountText.text = "Enemies: " + enemyCount.ToString();
     }
 }

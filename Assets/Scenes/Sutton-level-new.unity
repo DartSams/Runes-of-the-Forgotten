@@ -4049,14 +4049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e708375d13eb5e24d8e2bf483c8eb68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 5
-  attackPoint: {fileID: 1860250326}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  radius: 0.35
-  health: 0
 --- !u!50 &405030862
 Rigidbody2D:
   serializedVersion: 4
@@ -4218,7 +4210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21260bb210429e34d9f663ca22da12ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
   gameOver: {fileID: 480906310}
 --- !u!1 &480906310
 GameObject:
@@ -4735,7 +4726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21260bb210429e34d9f663ca22da12ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
   gameOver: {fileID: 480906310}
 --- !u!61 &1161254704
 BoxCollider2D:
@@ -5346,7 +5336,7 @@ GameObject:
   - component: {fileID: 1586834468}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Player
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -8,7 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DartagnanLevel.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-<<<<<<< HEAD
   - enabled: 0
     path: Assets/Scenes/scene 2.unity
     guid: 72a5d8f9f2676ac4289390ffe13bec4f
@@ -25,11 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/OakWoodsLevel.unity
     guid: a9a461ef32873524eb553b1c016ea8d6
   - enabled: 1
+    path: Assets/Scenes/grant.unity
+    guid: e56110d36fd6ca447bb0602c8b0b0f0f
+  - enabled: 1
     path: Assets/Scenes/Main-menu.unity
     guid: 3d722fe95ff2b9e43a186721babb772b
-=======
-  - enabled: 1
-    path: Assets/Scenes/scene 2.unity
-    guid: 72a5d8f9f2676ac4289390ffe13bec4f
->>>>>>> 948f37c74c36da36539a1c91fbfcc3708266851f
   m_configObjects: {}
