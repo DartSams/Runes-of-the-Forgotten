@@ -25,9 +25,9 @@ public class persistentManager : MonoBehaviour
     {
         sceneNames.Add("OakWoodsLevel");
         sceneNames.Add("DartagnanLevel");
+        //sceneNames.Add("RunesLevel");
         sceneNames.Add("grant");
-        sceneNames.Add("RunesLevel");
-        sceneNames.Add("Sutton-level");
+        sceneNames.Add("Sutton-level-new");
         player = GameObject.FindWithTag("player");
         if (instance == null)
         {
@@ -69,16 +69,23 @@ public class persistentManager : MonoBehaviour
             image.color = color;
             currRuneIndex++;
             SceneManager.LoadScene(sceneNames[currRuneIndex]);
-
+            enemies = GameObject.FindGameObjectsWithTag("enemy");
+            enemyCount = enemies.Length;
+            enemyCountText.text = "Enemies: " + enemyCount.ToString();
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerHealthText.text = "Player Health: " + player.gameObject.GetComponent<MainPlayerScript>().currentHealth;
+        //playerHealthText.text = "Player Health: " + player.gameObject.GetComponent<MainPlayerScript>().currentHealth;
         enemies = GameObject.FindGameObjectsWithTag("enemy");
         enemyCount = enemies.Length;
         enemyCountText.text = "Enemies: " + enemyCount.ToString();
+    }
+
+    public void updateHealthText(int currHealth)
+    {
+        playerHealthText.text = "Player Health: " + currHealth;
     }
 }

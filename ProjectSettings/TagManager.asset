@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - damage
   - Ground
+  - manager
   layers:
   - Default
   - TransparentFX

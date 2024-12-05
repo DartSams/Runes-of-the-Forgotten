@@ -22,6 +22,7 @@ public class MainPlayerScript : MonoBehaviour
     float timeLimit = 300;
     public int maxHealth = 100;
     public int currentHealth;
+    public Health healthBarScript;
 
     public float jumpForce = 10f;
     private bool isGrounded = false;
@@ -41,11 +42,16 @@ public class MainPlayerScript : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("enemy");
         enemyCount = enemies.Length;
         currentHealth = maxHealth;
+        healthBarScript.SetMaxHealth(maxHealth);
     }
         
     void Update()
     {
         Move();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("RunesLevel");
+        }
 
         if (transform.position.y < 0.5f)
         {
@@ -142,8 +148,9 @@ public class MainPlayerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "ground")
+        if (collision.transform.tag == "ground" || collision.transform.tag == "Ground") 
         {
+            isGrounded = true;
             anim.SetFloat("xDirection", 0);
         }
 
@@ -182,11 +189,14 @@ public class MainPlayerScript : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
+        healthBarScript.SetHealth(currentHealth);
+        persistentManager.instance.updateHealthText(currentHealth);
 
         if (currentHealth <= 0)
         {
             target = null;
             //pc.enabled = false;
+            healthBarScript.Die();
         }
     }
 }

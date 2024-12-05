@@ -66,9 +66,9 @@ public class DartagnanenemyScript : MonoBehaviour
         anim.SetTrigger("attack");
     }
 
-    void hitEnemy()
+    public void hitEnemy()
     {
-        target.gameObject.GetComponent<MainPlayerScript>().TakeDamage(25);
+        target.gameObject.GetComponent<MainPlayerScript>().TakeDamage(5);
     }
 
     private void chase()

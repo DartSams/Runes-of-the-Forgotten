@@ -47,7 +47,7 @@ public class Hero : MonoBehaviour
         healthbar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
-            Health.Die();
+            //Health.Die();
         }
     }
 }

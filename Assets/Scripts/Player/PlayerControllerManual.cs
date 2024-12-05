@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +22,7 @@ public class PlayerControllerManual : MonoBehaviour
     public int health;
 
     public ManageGameOver GameOver;
+    
 
 
     void Start()
@@ -34,6 +36,10 @@ public class PlayerControllerManual : MonoBehaviour
     {
         MovePlayer();      // Call the method to move the player
         Jump();            // Call the method to handle jumping
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("RunesLevel");
+        }
     }
 
     int getHealth()
@@ -61,7 +67,7 @@ public class PlayerControllerManual : MonoBehaviour
         }
     }
 
-    void attack()
+    public void Attack()
     {
 
         Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius, enemyLayer);
@@ -112,7 +118,8 @@ public class PlayerControllerManual : MonoBehaviour
         {
 
             anim.SetBool("isAttacking", true);
-            
+
+
         }
 
         else

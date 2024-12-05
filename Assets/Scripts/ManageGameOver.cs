@@ -43,7 +43,7 @@ public class ManageGameOver : MonoBehaviour
     public void Restart()
     {
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("OakWoodsLevel");
 
     }
 }

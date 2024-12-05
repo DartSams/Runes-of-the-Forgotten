@@ -9,7 +9,7 @@ public class ProjectileLauncher : MonoBehaviour
     public GameObject projectile;
     public Transform spawnLocation;
     public Quaternion spawnRotation;
-    public float spawnTime = 0.5f;
+    float spawnTime = 1.25f;
     public Boolean run = false;
     private float timeSinceSpawned = 1f;
     
